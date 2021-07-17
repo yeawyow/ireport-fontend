@@ -38,7 +38,7 @@ import {
       if(result.data.result=="ok"){
         localStorage.setItem(LOGIN_STATUS, "ok")
          dispatch(setStateToSuccess(result.data.result));
-         history.push("/jobservice")
+         history.push("/dashboard")
       }else{
         localStorage.setItem(LOGIN_STATUS,"nok")
         dispatch(setStateToFailed(result.data.message));

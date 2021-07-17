@@ -54,15 +54,24 @@ const loginReducer = useSelector(({ loginReducer }) => loginReducer);
            I REPORT ระบบรายงานออนไลน์ โรงพยาบาลอากาศอำนวย
         </Typography>
         </div>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate onSubmit={e=>{
+          e.preventDefault();
+          dispatch(loginActions.login({ ...account, ...props }));
+        }}>
           <TextField
             variant="outlined"
             margin="normal"
             required
             fullWidth
-            id="UserName"
-            label="UserName"
-            name="UserName"
+            onChange={e => {
+              setAccount({
+                ...account,
+                username: e.target.value
+              });
+            }}
+            id="Username"
+            label="Username"
+            name="Username"
             autoComplete="UserName"
             autoFocus
           />
@@ -71,10 +80,16 @@ const loginReducer = useSelector(({ loginReducer }) => loginReducer);
             margin="normal"
             required
             fullWidth
-            name="password"
+            onChange={e => {
+              setAccount({
+                ...account,
+                passwordjwt: e.target.value
+              });
+            }}
+            name="Passwordjwt"
             label="Password"
             type="password"
-            id="password"
+            id="Passwordjwt"
             autoComplete="current-password"
           />
           <FormControlLabel

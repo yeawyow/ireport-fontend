@@ -6,6 +6,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import MenuIcon from '@material-ui/icons/Menu';
 import { withRouter } from "react-router-dom";
 import * as loginActions from "./../../../actions/login.action";
@@ -14,13 +15,7 @@ import {useDispatch} from 'react-redux'
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
+    display: 'flex',
   },
   appBar: {
     transition: theme.transitions.create(['margin', 'width'], {
@@ -36,6 +31,12 @@ const useStyles = makeStyles((theme) => ({
       duration: theme.transitions.duration.enteringScreen,
     }),
   },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  hide: {
+    display: 'none',
+  },
 }));
 
 const Header = props => {
@@ -43,16 +44,19 @@ const Header = props => {
   const dispatch = useDispatch()
   return (
     <div className={classes.root}>
-      <AppBar  position="fixed"
+       <CssBaseline />
+       <AppBar
+        position="fixed"
         className={clsx(classes.appBar, {
           [classes.appBarShift]: props.open,
-        })}>
+        })}
+      >
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={props.handleDrawerOpen}>
+          <IconButton edge="start"  className={clsx(classes.menuButton, props.open && classes.hide)} color="inherit" aria-label="menu" onClick={props.handleDrawerOpen}>
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            ระบบงานสารสนเทศ โรงพยาบาลอากาศอำนวย
+          I REPORT ระบบรายงานออนไลน์ โรงพยาบาลอากาศอำนวย
           </Typography>
           <Button color="inherit" onClick={()=>{
            
