@@ -2,13 +2,13 @@ import {
   LOGIN_FAILED,
   LOGIN_FETCHING,
   LOGIN_SUCCESS,
-  LOGOUT
+  LOGOUT,
 } from "./../Constants";
 
 const initialState = {
   result: null,
   isFetching: false,
-  error: false
+  error: false,
 };
 
 export default (state = initialState, { type, payload }) => {

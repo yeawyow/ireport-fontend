@@ -17,7 +17,6 @@ import JobserviceCreate from "./componets/pages/JobserviceCreate";
 import { useSelector, useDispatch } from "react-redux";
 import * as loginActions from "./actions/login.action";
 import Dashboard from "./componets/pages/Dashboard";
- 
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -71,7 +70,7 @@ const LoginRoute = ({ component: Component, ...rest }) => (
     render={(props) =>
       // ternary condition
       loginActions.isLoggedIn() ? (
-        <Redirect to="/jobservice" />
+        <Redirect to="/dashboard" />
       ) : (
         <Login {...props} />
       )
