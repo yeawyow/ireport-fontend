@@ -1,8 +1,7 @@
-export const LOGIN_FETCHING="LOGIN_FETCHING"
-export const LOGIN_FAILED="LOGIN_FAILED"
-export const LOGIN_SUCCESS="LOGIN_SUCCESS"
-export const LOGOUT="LOGOUT"
-
+export const LOGIN_FETCHING = "LOGIN_FETCHING";
+export const LOGIN_FAILED = "LOGIN_FAILED";
+export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
+export const LOGOUT = "LOGOUT";
 
 export const apiUrl = "http://localhost:8081/api/v2";
 export const imageUrl = "http://localhost:8081";
@@ -12,7 +11,8 @@ export const NO = "NO";
 export const OK = "ok";
 export const NOK = "nok";
 
-export const LOGIN_STATUS="LOGIN_STATUS";
+export const LOGIN_STATUS = "LOGIN_STATUS";
+export const ACCESS_TOKEN = "ACCESS_TOKEN";
 
 export const server = {
   LOGIN_URL: `login`,
@@ -21,7 +21,6 @@ export const server = {
   TRANSACTION_URL: `transaction`,
   REPORT_URL: `stock/report`,
   LOGIN_PASSED: `yes`,
- 
 };
 
 // Error Code
